@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #7dce84;
+}
+
+.main{
+    width: 100%;
+    max-width: 370px;
+}
+
+.main :where(.selectBtn, .options li){
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.selectBtn{
+    justify-content: space-between;
+    font-size: 22px;
+    height: 65px;
+    padding: 0 20px;
+    border-radius: 7px;
+    background: #fff;
+}
+
+.selectBtn i{
+    font-size: 31px;
+    color: #333;
+    transition: .2s ease-in-out;
+}
+
+.content{
+    display: none;
+    margin-top: 15px;
+    padding: 20px;
+    border-radius: 7px;
+    background: #fff;
+}
+
+.main.active .content{
+    display: block;
+}
+
+.main.active .selectBtn i{
+    transform: rotate(180deg);
+}
+
+.content .search{
+    position: relative;
+}
+
+.search input{
+    height: 53px;
+    width: 100%;
+    font-size: 17px;
+    padding: 0 15px 0 48px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #b3b3b3;
+}
+
+.search i{
+    left: 0;
+    line-height: 53px;
+    position: absolute;
+    width: 43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+}
+
+.content .options{
+    margin-top: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.options::-webkit-scrollbar{
+    width: 7px;
+}
+.options::-webkit-scrollbar-track{
+    background: #f1f1f1;
+    border-radius: 25px;
+}
+.options::-webkit-scrollbar-thumb{
+    background: #ccc;
+    border-radius: 25px;
+}
+
+.options li{
+    height: 50px;
+    border-radius: 5px;
+    padding: 0 13px;
+    font-size: 21px;
+}
+
+.options li:hover, li.selected{
+    background: #f2f2f2;
+}
